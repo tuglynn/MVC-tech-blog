@@ -1,0 +1,32 @@
+<div>
+    <h2> Welcome, {{name}}.</h2>
+</div>
+
+<div>
+    <h3>New blog entry</h3>
+    <form action="" id="new-post-form">
+        <div>
+            <label for="post-name">Subject:</label>
+            <input type="text" id="post-name">
+        </div>
+        <div>
+            <textarea name="" id="post-body" cols="30" rows="10"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Post!</button>
+    </form>
+</div>
+
+{{#if posts.length}}
+{{#each posts as |post|}}
+<div class="row">
+    <div class="col-md-12">
+    <h2>{{post.title}}</h2>
+    <p>{{post.date_created}}</p>
+    <h3>{{user.name}} said..</h3>
+    <p>{{post.post_body}}</p>
+    </div>
+</div>
+<hr>
+{{/each}}
+
+{{/if}}

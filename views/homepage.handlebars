@@ -1,11 +1,11 @@
-{{#each posts}}
-<div>
-    {{!-- I will add the name of the post
-    the body, and the time of posting.
-    this will loop for every post on the db --}}
-    <h2>{{post_name}}</h2>
-    <p>{{post_body}}</p>
-    <p>{{post_time}}</p>
+{{#each posts as |post|}}
+<div class="row">
+    <div class="col-md-12">
+    <h2>{{post.title}}</h2>
+    <p>{{post.date_created}}</p>
+    <h3>{{user.name}} said..</h3>
+    <p>{{post.post_body}}</p>
+    </div>
 </div>
-
+<hr>
 {{/each}}
