@@ -2,15 +2,17 @@ const router = require('express').Router();
 const {
     User
 } = require('../../models');
+const colors = require('colors')
+const withAuth = require('../../utils/auth');
 
 router.post('/', async (req, res) => {
+    //this route is for adding a new user to the db
     try {
         const userData = await User.create(req.body);
-
         req.session.save(() => {
             req.session.user_id = userData.id;
             req.session.logged_in = true;
-
+            console.log(`new user ${req.body.name} added to db`.brightBlue);
             res.status(200).json(userData);
         });
     } catch (err) {
@@ -20,6 +22,7 @@ router.post('/', async (req, res) => {
 });
 
 router.post('/login', async (req, res) => {
+    //this route logs the user in
     try {
         const userData = await User.findOne({
             where: {
@@ -71,5 +74,6 @@ router.post('/logout', (req, res) => {
         res.status(404).end();
     }
 });
+
 
 module.exports = router;

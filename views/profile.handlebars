@@ -1,10 +1,10 @@
 <div>
     <h2> Welcome, {{name}}.</h2>
 </div>
-
+{{!-- 
 <div>
     <h3>New blog entry</h3>
-    <form action="" id="new-post-form">
+    <form class="new-post-form">
         <div>
             <label for="post-name">Subject:</label>
             <input type="text" id="post-name">
@@ -14,7 +14,25 @@
         </div>
         <button type="submit" class="btn btn-primary">Post!</button>
     </form>
-</div>
+</div> --}}
+<div class="row mt-4">
+  <div class="col-md-6">
+    <h3>Create a New Post:</h3>
+
+    <form class="form new-post-form">
+      <div class="form-group">
+        <label for="post-title">post title:</label>
+        <input class="form-input" type="text" id="post-name" name="post-name" />
+      </div>
+      <div class="form-group">
+        <label for="post-body">body:</label>
+        <textarea class="form-input" id="post-body" name="post-body"></textarea>
+      </div>
+      <div class="form-group">
+        <button type="submit" class="btn btn-primary">Create</button>
+      </div>
+    </form>
+  </div>
 
 {{#if posts.length}}
 {{#each posts as |post|}}
@@ -30,3 +48,5 @@
 {{/each}}
 
 {{/if}}
+
+<script src="./javascript/profiles.js"></script>

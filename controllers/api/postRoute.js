@@ -3,6 +3,7 @@ const {
     Post
 } = require('../../models');
 const withAuth = require('../../utils/auth');
+const colors = require('colors');
 
 router.post('/', withAuth, async (req, res) => {
     try {
@@ -10,6 +11,8 @@ router.post('/', withAuth, async (req, res) => {
             ...req.body,
             user_id: req.session.user_id,
         });
+        console.log('HELLO'.green)
+        console.log(JSON.stringify(newPost).green)
 
         res.status(200).json(newPost);
     } catch (err) {
