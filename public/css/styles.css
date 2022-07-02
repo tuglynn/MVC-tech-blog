@@ -2,17 +2,30 @@ nav {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    margin: .5rem;
 }
 
-a {
-    font-size: 1em;
+time {
+    font-size: .7em;
 }
 
 h1 {
     text-align: center;
 }
 
-div {
-    margin: 1rem;
+#shadow-box {
+    -webkit-box-shadow: -1px 5px 15px 5px rgba(180, 180, 180, 0.73);
+    box-shadow: -1px 5px 15px 5px rgba(180, 180, 180, 0.73);
+}
+
+h3 {
+    font-size: 1em;
+}
+
+small {
+    font-size: .5em;
+}
+
+.post-title {
+    display: flex;
+    justify-content: space-between;
 }

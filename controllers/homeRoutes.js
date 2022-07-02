@@ -12,15 +12,13 @@ router.get('/', async (req, res) => {
     try {
         //grab all the post data from db
         const postData = await Post.findAll({
-            //orders the post descending by date
-            order: [
-                ['date_created', 'DESC']
-            ]
-        }, {
             include: [{
                 model: User,
                 attributes: ['name']
-            }]
+            }],
+            order: [
+                ['date_created', 'DESC']
+            ]
         });
         //creates an array of all the blog posts to display on front page
         const posts = postData.map((post) => post.get({
