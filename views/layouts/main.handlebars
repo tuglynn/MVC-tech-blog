@@ -11,8 +11,8 @@
 
 </head>
 <body>
-<header>
-    <nav class="nav navbar-light bg-light">
+<header mb-2>
+    <nav class="nav navbar-light bg-light border-bottom">
         {{#if logged_in}}
 <a class="nav-link" href="/"> Home</a>
 <a class="nav-link" href="/profile"> Dashboard</a>
@@ -22,11 +22,10 @@
 <a class="nav-link" href="/login"> Login</a>
 {{/if}}
     </nav>
-    <div class="jumbotron p-1">
-        <h1 class="display-4 p-2">The Tech Thought <br><small class="text-muted">since 2022</small></h1>
+    <div class="jumbotron p-1 border-bottom text-center">
+        <h1 class="display-4 p-2">The Tech Thought <br><small class="text-muted fs-6">since 2022</small></h1>
         </div>
 </header>
-<span class="border-bottom"></span>
 {{{body}}}
 
     {{#if logged_in}}

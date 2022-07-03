@@ -54,11 +54,11 @@ router.get('/profile', withAuth, async (req, res) => {
                 attributes: ['name']
             }]
         });
-        //creates an array of all the blog posts to display on front page
+        //creates an array of all the users blog posts to display on their profile
         const posts = postData.map((post) => post.get({
             plain: true
         }));
-        console.log('GET request to the /profile route'.brightYellow);
+        console.log('GET request to display users posts on their profile'.brightYellow);
         res.render('profile', {
             ...user,
             posts,
@@ -67,7 +67,32 @@ router.get('/profile', withAuth, async (req, res) => {
     } catch (err) {
         res.status(500).json(err);
     }
-})
+});
+
+router.get('/post/:id', async (req, res) => {
+    try {
+        const postData = await Post.findByPk(req.params.id, {
+            include: [{
+                model: User,
+                attributes: ['name']
+            }],
+            order: [
+                ['date_created', 'DESC']
+            ]
+        });
+
+        const post = postData.get({
+            plain: true
+        });
+
+        res.render('postpage', {
+            post
+        });
+    } catch (err) {
+        res.status(500).json(err);
+    }
+});
+
 
 //this route renders the login page.
 router.get('/login', (req, res) => {

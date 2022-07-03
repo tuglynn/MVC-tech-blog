@@ -1,9 +1,3 @@
-nav {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-}
-
 time {
     font-size: .7em;
 }
@@ -26,6 +20,17 @@ small {
 }
 
 .post-title {
-    display: flex;
-    justify-content: space-between;
+    text-decoration: none;
+}
+
+.post-card {
+    margin: 2.5rem 7rem;
+}
+
+header {
+    margin-bottom: 2rem;
+}
+
+.form-group {
+    margin: .5rem 0rem;
 }

@@ -1,20 +1,6 @@
 <div>
     <h2> Welcome, {{name}}.</h2>
 </div>
-{{!-- 
-<div>
-    <h3>New blog entry</h3>
-    <form class="new-post-form">
-        <div>
-            <label for="post-name">Subject:</label>
-            <input type="text" id="post-name">
-        </div>
-        <div>
-            <textarea name="" id="post-body" cols="30" rows="10"></textarea>
-        </div>
-        <button type="submit" class="btn btn-primary">Post!</button>
-    </form>
-</div> --}}
 <div class="row mt-4">
   <div class="col-md-6">
     <h3>Create a New Post:</h3>
@@ -36,15 +22,16 @@
 
 {{#if posts.length}}
 {{#each posts as |post|}}
-<div class="row">
-    <div class="col-md-12">
-    <h2>{{post.title}}</h2>
-    <p>{{post.date_created}}</p>
-    <h3>{{user.name}} said..</h3>
-    <p>{{post.post_body}}</p>
+<div class="container.fluid p-2 bg-info post-card rounded flex-wrap shadow-box">
+    <div class="d-flex justify-content-between flex p-2 bg-secondary rounded">
+    <h2 class="display-6 p-1 blog-post"><a href="/post/{{post.id}}" class="post-title text-black-50">{{post.title}}</a></h2>
+    <time class=""><em>{{post.date_created}}</em></time>
+    </div>
+    <h3 class="display-8 m-1 text-dark">Posted by {{user.name}}:</h3>
+    <div class="m-2">
+    <p class="lead text-body">{{post.post_body}}</p>
     </div>
 </div>
-<hr>
 {{/each}}
 
 {{/if}}

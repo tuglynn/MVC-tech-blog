@@ -1,15 +1,14 @@
 {{#each posts as |post|}}
-<div class="container.fluid p-2 bg-info m-5 rounded" id="shadow-box">
-    <div class="d-flex justify-content-between p-2">
-    <h2 class="display-6 bg-secondary rounded p-1">{{post.title}}</h2>
-    <time><em>{{post.date_created}}</em></time>
+<div class="container.fluid p-2 bg-info post-card rounded flex-wrap" id="shadow-box">
+    <div class="d-flex justify-content-between flex p-2 bg-secondary rounded">
+    <h2 class="display-6 p-1 blog-post"><a href="/post/{{post.id}}" class="post-title text-black-50">{{post.title}}</a></h2>
+    <time class=""><em>{{post.date_created}}</em></time>
     </div>
-    <h3 class="display-8 m-1">Posted by {{user.name}}:</h3>
+    <h3 class="display-8 m-1 text-dark">Posted by {{user.name}}:</h3>
     <div class="m-2">
-    <p class="lead">{{post.post_body}}</p>
+    <p class="lead text-body">{{post.post_body}}</p>
     </div>
 </div>
-<span class="border-bottom"></span>
 {{/each}}
 
 

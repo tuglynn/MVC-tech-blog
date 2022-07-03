@@ -5,4 +5,4 @@ const deletePost = async (event) => {
 
 
 
-document.querySelector('.post-box').addEventListener('click', deletePost);
+document.querySelector('.blog-post').addEventListener('click', deletePost);
