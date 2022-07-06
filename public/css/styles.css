@@ -6,7 +6,7 @@ h1 {
     text-align: center;
 }
 
-#shadow-box {
+.shadow-box {
     -webkit-box-shadow: -1px 5px 15px 5px rgba(180, 180, 180, 0.73);
     box-shadow: -1px 5px 15px 5px rgba(180, 180, 180, 0.73);
 }

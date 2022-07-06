@@ -20,5 +20,6 @@ const makeNewComment = async (event) => {
     }
 }
 
+console.log('hello')
 
 document.querySelector('.new-comment-form').addEventListener('submit', makeNewComment);

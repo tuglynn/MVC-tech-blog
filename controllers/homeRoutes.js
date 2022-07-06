@@ -75,17 +75,14 @@ router.get('/post/:id', async (req, res) => {
             include: [{
                 model: User,
                 attributes: ['name']
-            }],
-            order: [
-                ['date_created', 'DESC']
-            ]
+            }]
         });
 
         const post = postData.get({
             plain: true
         });
 
-        res.render('postpage', {
+        res.render('comment', {
             post
         });
     } catch (err) {
