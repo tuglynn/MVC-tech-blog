@@ -23,7 +23,15 @@
   </div>
 </div>
 {{!-- create comment loop --}}
-{{#each}}
+{{#each comments as |comment|}}
+<div class="container.fluid p-2 bg-info post-card rounded flex-wrap shadow-box">
+    <div class="d-flex justify-content-between flex p-2 bg-secondary rounded">
+    <time class=""><em>{{comment.date_created}}</em></time>
+    </div>
+    <h3 class="display-8 m-1 text-dark">Posted by {{user_id}}:</h3>
+    <div class="m-2">
+    <p class="lead text-body">{{comment.comment}}</p>
+    </div>
 
 {{/each}}
 
