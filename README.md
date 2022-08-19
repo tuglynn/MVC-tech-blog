@@ -1,6 +1,9 @@
 # MVC - Tech Blog
 [![Generic badge](https://img.shields.io/badge/license-MIT-blue.svg)](https://shields.io/)
 
+
+ Live Deployed App <https://powerful-ridge-53107.herokuapp.com/>
+
 ## Table of content
 - [Description](#description)
 - [Installation](#installation)
@@ -12,22 +15,11 @@
 ## Description
 This is a fullstack app tech blog deployed to Heroku for users to share their thoughts on the latest tech.
 
-    
-## Installation
-To install the files needed to run the app, run the following command:
-~~~
-npm i
-~~~
 
 ## Usage
 
-This app uses, handlebars.js, express.js, sequelize,
-    
-## Tests
-To test the application, run the command:
-~~~
-npm run test
-~~~
+This app uses, handlebars.js, express.js, sequelize, as the main packages.
+
 
 ## Contribute
 If you would like to contribute, please checkout <http://www.github.com/monacoglynn>
